@@ -1,0 +1,16 @@
+node_modules/
+.next/
+.next-dev/
+out/
+coverage/
+*.tsbuildinfo
+.env*
+!.env.example
+
+# Local tooling
+.vscode/
+.idea/
+
+# OS files
+Thumbs.db
+.DS_Store
