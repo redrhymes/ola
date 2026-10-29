@@ -77,12 +77,6 @@ export function Drawer({ isOpen, onClose, activePath = "/" }: DrawerProps) {
     };
   }, [isOpen, onClose]);
 
-  const phoneDisplay =
-    site.phone.display === "Dealership phone number to be confirmed"
-      ? "+91 98765 43210"
-      : site.phone.display;
-  const phoneHref = site.phone.href === "tel:" ? "tel:+919876543210" : site.phone.href;
-
   return (
     <>
       {/* Backdrop */}
@@ -189,11 +183,11 @@ export function Drawer({ isOpen, onClose, activePath = "/" }: DrawerProps) {
               <span>{site.address.lines.join(" ")}</span>
             </a>
             <a
-              href={phoneHref}
+              href={site.phone.href}
               className="flex items-center gap-2.5 text-brand-black hover:text-brand-red transition-colors font-medium"
             >
               <Phone className="w-4 h-4 text-brand-red shrink-0" />
-              <span>{phoneDisplay}</span>
+              <span>{site.phone.display}</span>
             </a>
           </div>
         </div>

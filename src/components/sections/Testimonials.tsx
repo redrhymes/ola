@@ -97,7 +97,7 @@ export function Testimonials() {
             return (
               <li
                 key={review.id}
-                className="flex min-w-[85%] snap-center md:min-w-0"
+                className="flex min-w-[calc(100vw-2rem)] shrink-0 snap-center md:min-w-0 md:shrink"
               >
                 <figure className="flex h-full w-full flex-col rounded-[20px] border border-[#E6E8EC] bg-white p-5 shadow-[0_2px_12px_rgba(0,0,0,0.03)] sm:p-6">
                   <Quote

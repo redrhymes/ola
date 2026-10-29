@@ -42,30 +42,42 @@ export const bookingPage = {
 } as const;
 
 const dealershipPhone = {
-  // TODO: replace with the dealership's real phone number.
-  display: "+91 98765 43210",
-  href: "tel:+919876543210",
+  display: "+91 93554 10425",
+  href: "tel:+919355410425",
 };
+const dealershipMapsUrl =
+  "https://www.google.com/maps/place/Lamba+Ola+Electric/@28.6379921,77.0891176,1081m/data=!3m1!1e3!4m12!1m5!3m4!2zMjjCsDM4JzEyLjEiTiA3N8KwMDUnMTguMCJF!8m2!3d28.636693!4d77.0883191!3m5!1s0x390d0529b6e2b6c5:0x194f54c94f630225!8m2!3d28.6357988!4d77.0916644!16s%2Fg%2F11z_szbpyn?hl=en-IN&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D";
+const dealershipMapEmbedUrl =
+  "https://maps.google.com/maps?q=28.6357988%2C77.0916644&z=16&output=embed";
 
 export const site = {
   name: "Ola Electric – Authorized Dealership",
   description:
     "Explore Ola Electric scooters and motorcycles, compare models, and connect with your authorized dealership.",
+  aboutPage: {
+    title: "Welcome to Ola Electric",
+    introduction:
+      "We help riders explore Ola Electric scooters and motorcycles, compare available models, and find the option that suits their needs. Visit our dealership to learn about the range and get guidance from our team.",
+    paragraphs: [
+      "From choosing a model to understanding its available variants, our team is here to make your experience clear and straightforward. We can help with vehicle enquiries, test ride requests, finance information, and booking requests.",
+      "Our support continues beyond helping you explore the range. Contact us for assistance with your questions, or visit the showroom to see the available Ola Electric vehicles in person.",
+      "We look forward to welcoming you and helping you take the next step toward electric mobility.",
+    ],
+  } as const,
   phone: dealershipPhone,
   address: {
-    // TODO: replace with the dealership's real address.
-    lines: ["123, Your Street Name,", "Your Area, Your City - PIN Code"],
-    mapUrl: "",
+    lines: [
+      "Ground Floor, 1/22, Near Shiv Bhola Mandir,",
+      "Ganesh Nagar, Tilak Nagar, New Delhi - 110018",
+    ],
+    mapUrl: dealershipMapsUrl,
   },
   hours: [
-    // TODO: replace with the dealership's real opening hours.
     { days: "Mon - Sat", time: "9:00 AM - 7:00 PM" },
     { days: "Sunday", time: "10:00 AM - 6:00 PM" },
   ],
-  // TODO: paste the src from Google Maps > Share > Embed a map.
-  mapEmbedUrl: "",
-  // TODO: replace with the dealership's real Google Maps link.
-  mapsUrl: "",
+  mapEmbedUrl: dealershipMapEmbedUrl,
+  mapsUrl: dealershipMapsUrl,
   showroom: {
     eyebrow: "OUR LOCATION",
     title: "Visit Our Showroom",
@@ -114,15 +126,15 @@ export const site = {
     blurb:
       "Your trusted Ola Electric dealership, bringing you a cleaner, smarter and more sustainable way to move.",
     social: [
-      { name: "Facebook", href: "" },
-      { name: "Instagram", href: "" },
-      { name: "YouTube", href: "" },
+      { name: "Facebook", href: "https://www.facebook.com/sharer/sharer.php?u=https://lambahyundai.in/" },
+      { name: "Instagram", href: "https://www.instagram.com/lambahyundaidelhi?igsh=bm43Z3U0czl4OGpm" },
+      { name: "YouTube", href: "https://www.youtube.com/@lambahyundai7049?si=CxtdyPi6z51Rxkpt" },
       { name: "LinkedIn", href: "" },
-    ], // TODO: add the real profile URLs.
+    ],
     quickLinksTitle: "Quick Links",
     quickLinks: [
       { label: "Home", href: "#top" },
-      { label: "About Us", href: "#about" }, // TODO: create an About page or section.
+      { label: "About Us", href: "/about" },
       { label: "Our Vehicles", href: "#scooters" },
       { label: "Test Ride", href: "#test-ride" },
       { label: "Finance & Offers", href: "/finance#finance" },
@@ -146,15 +158,13 @@ export const site = {
     { label: "Home", href: "/" },
     { label: "Scooters", href: "/#scooters" },
     { label: "Motorcycles", href: "/#motorcycles" },
-    { label: "Comparison", href: "/comparison" },
-    { label: "Finance", href: "/finance" },
-    { label: "About Us", href: "/#about" },
+    { label: "About Us", href: "/about" },
     { label: "Contact", href: "/contact" },
   ] satisfies NavigationItem[],
   social: [
-    { name: "Instagram", href: "https://www.instagram.com/olaelectric/" },
-    { name: "Facebook", href: "https://www.facebook.com/olaelectric/" },
-    { name: "YouTube", href: "https://www.youtube.com/@OlaElectric" },
+    { name: "Instagram", href: "https://www.instagram.com/lambahyundaidelhi?igsh=bm43Z3U0czl4OGpm" },
+    { name: "Facebook", href: "https://www.facebook.com/sharer/sharer.php?u=https://lambahyundai.in/" },
+    { name: "YouTube", href: "https://www.youtube.com/@lambahyundai7049?si=CxtdyPi6z51Rxkpt" },
   ] satisfies SocialLink[],
   quickActions: [
     {
@@ -246,9 +256,8 @@ export const site = {
       "Map will appear here once the dealership address is added",
   } as const,
   email: {
-    // TODO: replace with the dealership's real email address.
-    display: "hello@yourdealership.com",
-    href: "mailto:hello@yourdealership.com",
+    display: "info@olalamba.com",
+    href: "mailto:info@olalamba.com",
   },
   financeOffers: {
     eyebrow: "FINANCE & OFFERS",

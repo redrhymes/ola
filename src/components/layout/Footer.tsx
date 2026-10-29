@@ -1,9 +1,8 @@
-import Image from "next/image";
 import { Clock3, MapPin, Phone } from "lucide-react";
 import { modelsData, vehicleMenuModels } from "@/data/vehicles";
-import { images } from "@/data/images";
 import { site } from "@/data/site";
 import { SocialIcons } from "@/components/ui/SocialIcons";
+import { Logo } from "@/components/ui/logo";
 
 const socialLinks = site.footer.social;
 
@@ -15,29 +14,7 @@ export function Footer() {
       <div className="mx-auto max-w-container px-4 pt-16 sm:px-6 lg:px-8">
         <div className="grid gap-10 md:grid-cols-2 md:gap-x-12 md:gap-y-12 lg:grid-cols-[1.35fr_1fr_1fr_1.45fr] lg:gap-12">
           <div className="relative min-w-0 md:col-span-2 lg:col-span-1 lg:pr-10 lg:after:absolute lg:after:right-0 lg:after:top-2 lg:after:bottom-2 lg:after:w-px lg:after:bg-white/[0.12] lg:after:content-['']">
-            {images.logo.wordmarkWhite ? (
-              <div className="relative h-10 w-[220px]">
-                <Image
-                  src={images.logo.wordmarkWhite}
-                  alt={site.name}
-                  fill
-                  sizes="220px"
-                  className="object-contain object-left"
-                />
-              </div>
-            ) : (
-              <p
-                className="flex h-10 items-center gap-2 text-white"
-                aria-label={site.name}
-              >
-                <span className="text-[40px] font-extrabold leading-none tracking-[-0.06em]">
-                  {site.footer.logoPrimary}
-                </span>
-                <span className="text-[28px] font-light leading-none tracking-[0.04em]">
-                  {site.footer.logoSecondary}
-                </span>
-              </p>
-            )}
+            <Logo isDark />
             <p className="mt-6 max-w-[340px] text-base leading-[1.65] text-[#C3C6CE]">
               {site.footer.blurb}
             </p>

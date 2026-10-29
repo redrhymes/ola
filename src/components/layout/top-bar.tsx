@@ -2,12 +2,6 @@ import { Megaphone, MapPin, Phone } from "lucide-react";
 import { site } from "@/data/site";
 
 export function TopBar() {
-  const phoneDisplay =
-    site.phone.display === "Dealership phone number to be confirmed"
-      ? "+91 98765 43210"
-      : site.phone.display;
-  const phoneHref = site.phone.href === "tel:" ? "tel:+919876543210" : site.phone.href;
-
   return (
     <div className="bg-surface border-b border-border text-xs text-brand-black transition-colors">
       <div className="mx-auto flex h-9 max-w-[1360px] items-center justify-between gap-2 px-3 sm:px-4 lg:px-4">
@@ -36,12 +30,12 @@ export function TopBar() {
           </span>
 
           <a
-            href={phoneHref}
-            aria-label={`Call ${phoneDisplay}`}
+            href={site.phone.href}
+            aria-label={`Call ${site.phone.display}`}
             className="inline-flex items-center gap-1.5 text-brand-black hover:text-brand-red transition-colors font-medium tracking-tight"
           >
             <Phone className="w-3.5 h-3.5 text-brand-black" aria-hidden="true" />
-            <span className="hidden sm:inline">{phoneDisplay}</span>
+            <span className="hidden sm:inline">{site.phone.display}</span>
           </a>
         </div>
       </div>

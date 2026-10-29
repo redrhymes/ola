@@ -7,6 +7,7 @@ const baseUrl =
 export default function sitemap(): MetadataRoute.Sitemap {
   const routes = [
     "/",
+    "/about",
     "/contact",
     "/comparison",
     "/finance",

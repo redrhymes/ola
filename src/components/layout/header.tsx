@@ -37,11 +37,11 @@ export function Header({ activePath = "/" }: HeaderProps) {
       <TopBar />
 
       {/* Main Navbar */}
-      <div className="max-w-[1360px] mx-auto px-3 sm:px-4 lg:px-4">
+      <div className="mx-auto max-w-[1360px] px-2 sm:px-4 lg:px-4">
         <div className="flex items-center justify-between h-[72px] sm:h-[80px]">
           {/* Brand Logo */}
-          <div className="shrink-0">
-            <Logo />
+          <div className="min-w-0 flex-1 overflow-hidden lg:flex-none">
+            <Logo className="max-w-[58vw] sm:max-w-full" desktopLarge />
           </div>
 
           {/* Desktop Navigation Links */}
@@ -165,12 +165,12 @@ export function Header({ activePath = "/" }: HeaderProps) {
           </nav>
 
           {/* Right Action Buttons */}
-          <div className="flex shrink-0 items-center gap-1 sm:gap-4">
-            {/* Book a Test Ride CTA button */}
+          <div className="ml-1 flex shrink-0 items-center gap-1 sm:ml-0 sm:gap-4">
+            {/* Booking CTA */}
             <a
               href={activePath === "/" ? "#test-ride" : "/#test-ride"}
               aria-label="Book a Test Ride"
-              className="inline-flex min-h-11 min-w-11 items-center justify-center gap-2 rounded-button bg-brand-red px-3 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-brand-red-hover hover:shadow active:scale-[0.98] sm:px-5 sm:text-sm"
+              className="hidden shrink-0 items-center justify-center gap-2 rounded-button bg-brand-red px-2 py-2.5 text-xs font-semibold text-white shadow-sm transition-all hover:bg-brand-red-hover hover:shadow active:scale-[0.98] sm:min-h-11 sm:min-w-11 sm:px-5 sm:text-sm lg:inline-flex"
             >
               <span className="hidden sm:inline">Book a Test Ride</span>
               <ArrowRight className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
@@ -180,7 +180,7 @@ export function Header({ activePath = "/" }: HeaderProps) {
             <button
               type="button"
               onClick={() => setIsDrawerOpen(true)}
-              className="inline-flex size-11 items-center justify-center rounded-md p-2 text-brand-black transition-colors hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-red lg:hidden"
+              className="inline-flex size-10 shrink-0 items-center justify-center rounded-md p-2 text-brand-black transition-colors hover:text-brand-red focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-red lg:hidden"
               aria-label="Open navigation menu"
               aria-expanded={isDrawerOpen}
             >
