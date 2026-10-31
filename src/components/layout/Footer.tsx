@@ -140,12 +140,24 @@ export function Footer() {
                   className="mt-1 size-[26px] shrink-0 stroke-[1.5] text-white"
                 />
                 <div className="min-w-0">
-                  <a
-                    href={site.phone.href}
-                    className="inline-flex min-h-11 items-center text-base font-semibold text-white hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
-                  >
-                    {site.phone.display}
-                  </a>
+                  <ul className="space-y-2">
+                    {site.dealershipLocations.map(({ name, phone }) => (
+                      <li
+                        key={name}
+                        className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3"
+                      >
+                        <span className="min-w-0 text-sm leading-5 text-[#C3C6CE]">
+                          {name}
+                        </span>
+                        <a
+                          href={phone.href}
+                          className="inline-flex min-h-10 items-center whitespace-nowrap text-sm font-semibold text-white hover:underline hover:underline-offset-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white"
+                        >
+                          {phone.display}
+                        </a>
+                      </li>
+                    ))}
+                  </ul>
                   <p className="text-base leading-[1.5] text-[#A9ACB5]">
                     {site.footer.contactNote}
                   </p>

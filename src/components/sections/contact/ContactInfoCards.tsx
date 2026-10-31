@@ -45,12 +45,24 @@ export function ContactInfoCards() {
               ) : null}
 
               {key === "phone" ? (
-                <a
-                  href={site.phone.href}
-                  className="mt-3 inline-flex min-h-11 items-center font-semibold text-brand-black underline-offset-4 hover:text-brand-red hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-red"
-                >
-                  {site.phone.display}
-                </a>
+                <ul className="mt-3 space-y-2">
+                  {site.dealershipLocations.map(({ name, phone }) => (
+                    <li
+                      key={name}
+                      className="grid grid-cols-[minmax(0,1fr)_auto] items-center gap-x-3 rounded-md bg-surface px-3 py-2"
+                    >
+                      <span className="min-w-0 text-sm font-medium text-brand-black">
+                        {name}
+                      </span>
+                      <a
+                        href={phone.href}
+                        className="inline-flex min-h-10 items-center whitespace-nowrap text-sm font-semibold text-brand-black underline-offset-4 hover:text-brand-red hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-red"
+                      >
+                        {phone.display}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
               ) : null}
 
               {key === "email" ? (

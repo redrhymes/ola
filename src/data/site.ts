@@ -41,10 +41,21 @@ export const bookingPage = {
   ] as const,
 } as const;
 
-const dealershipPhone = {
-  display: "+91 93554 10425",
-  href: "tel:+919355410425",
-};
+const dealershipLocations = [
+  {
+    name: "Tilak Nagar",
+    phone: { display: "+91 93554 10428", href: "tel:+919355410428" },
+  },
+  {
+    name: "Dilshad Garden",
+    phone: { display: "+91 93554 10427", href: "tel:+919355410427" },
+  },
+  {
+    name: "Burari",
+    phone: { display: "+91 93554 10484", href: "tel:+919355410484" },
+  },
+] as const;
+const dealershipPhone = dealershipLocations[0].phone;
 const dealershipMapsUrl =
   "https://www.google.com/maps/place/Lamba+Ola+Electric/@28.6379921,77.0891176,1081m/data=!3m1!1e3!4m12!1m5!3m4!2zMjjCsDM4JzEyLjEiTiA3N8KwMDUnMTguMCJF!8m2!3d28.636693!4d77.0883191!3m5!1s0x390d0529b6e2b6c5:0x194f54c94f630225!8m2!3d28.6357988!4d77.0916644!16s%2Fg%2F11z_szbpyn?hl=en-IN&entry=ttu&g_ep=EgoyMDI2MTAyMC4wIKXMDSoASAFQAw%3D%3D";
 const dealershipMapEmbedUrl =
@@ -65,6 +76,7 @@ export const site = {
     ],
   } as const,
   phone: dealershipPhone,
+  dealershipLocations,
   address: {
     lines: [
       "Ground Floor, 1/22, Near Shiv Bhola Mandir,",

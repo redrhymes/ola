@@ -130,12 +130,24 @@ export function ShowroomInfo() {
 
                       {row.id === "contact" ? (
                         <>
-                          <a
-                            href={getPhoneHref()}
-                            className="mt-2 inline-block text-base leading-[1.55] text-[#4A4D55] hover:underline"
-                          >
-                            {site.phone.display}
-                          </a>
+                          <ul className="mt-2 space-y-1.5">
+                            {site.dealershipLocations.map(({ name, phone }) => (
+                              <li
+                                key={name}
+                                className="grid grid-cols-1 gap-x-3 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
+                              >
+                                <span className="text-sm leading-5 text-[#4A4D55]">
+                                  {name}
+                                </span>
+                                <a
+                                  href={phone.href}
+                                  className="inline-flex min-h-9 items-center text-sm font-semibold leading-5 text-[#4A4D55] hover:text-brand-red hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-brand-red"
+                                >
+                                  {phone.display}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
                           <p className="mt-1 text-base leading-[1.55] text-[#4A4D55]">
                             {row.note}
                           </p>
